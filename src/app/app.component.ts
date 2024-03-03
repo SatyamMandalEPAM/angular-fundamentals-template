@@ -79,7 +79,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     // 5.2 Unsubscribe from all subscriptions
     // YOUR CODE STARTS HERE
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.searchTermByCharacters.unsubscribe();
+    this.charactersResults$!.subscribe().unsubscribe();
+    this.planetAndCharactersResults$!.subscribe().unsubscribe();
     // YOUR CODE ENDS HERE
   }
 
