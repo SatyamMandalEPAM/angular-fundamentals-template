@@ -73,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
     - Subscribe to changes
     - Check the received value using the areAllValuesTrue function and pass them to the isLoading variable. */
     // YOUR CODE STARTS HERE
-    this.mockDataService.getPlanetLoader().pipe(mergeMap(map => this.mockDataService.getCharactersLoader())).subscribe(x => this.isLoading = x);
+    this.mockDataService.getPlanetLoader().subscribe(loading => this.isLoading = loading);
     // YOUR CODE ENDS HERE
   }
 
