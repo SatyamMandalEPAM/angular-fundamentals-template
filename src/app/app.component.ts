@@ -4,10 +4,12 @@ import {
   filter,
   forkJoin,
   map,
+  concat,
   Observable,
   Subject,
   Subscription,
   switchMap,
+  mergeMap,
   debounceTime
 } from 'rxjs';
 import { MockDataService } from './mock-data.service';
@@ -60,6 +62,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // As a result, a list with the names of the characters and the names of the planets is displayed on the screen.
     // Your code should looks like this: this.planetAndCharactersResults$ = /* Your code */
     // YOUR CODE STARTS HERE
+    this.planetAndCharactersResults$ = concat(this.mockDataService.getPlanets(), this.mockDataService.getCharacters());
     // YOUR CODE ENDS HERE
   }
 
@@ -76,7 +79,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     // 5.2 Unsubscribe from all subscriptions
     // YOUR CODE STARTS HERE
-    this.searchTermByCharacters.unsubscribe();
+    this.subscriptions.forEach(sub => sub.unsubscribe());
     // YOUR CODE ENDS HERE
   }
 
