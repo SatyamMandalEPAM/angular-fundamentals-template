@@ -9,8 +9,8 @@ import {
   Subject,
   Subscription,
   switchMap,
-  mergeMap,
-  debounceTime
+  debounceTime,
+  mergeMap
 } from 'rxjs';
 import { MockDataService } from './mock-data.service';
 
@@ -73,6 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
     - Subscribe to changes
     - Check the received value using the areAllValuesTrue function and pass them to the isLoading variable. */
     // YOUR CODE STARTS HERE
+    this.mockDataService.getPlanetLoader().pipe(mergeMap(map => this.mockDataService.getCharactersLoader())).subscribe(x => this.isLoading = x);
     // YOUR CODE ENDS HERE
   }
 
@@ -80,8 +81,6 @@ export class AppComponent implements OnInit, OnDestroy {
     // 5.2 Unsubscribe from all subscriptions
     // YOUR CODE STARTS HERE
     this.searchTermByCharacters.unsubscribe();
-    this.charactersResults$!.subscribe().unsubscribe();
-    this.planetAndCharactersResults$!.subscribe().unsubscribe();
     // YOUR CODE ENDS HERE
   }
 
