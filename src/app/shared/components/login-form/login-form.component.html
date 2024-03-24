@@ -11,7 +11,8 @@
         </div>
         <div class="form__control">
           <label for="password">Password</label>
-          <input required type="password" id="password" name="password" placeholder="Input text" />
+          <!--Use the name `password` for the form control.-->
+          <input required type="password" id="password" name="password" placeholder="Input text" ngModel/>
           <span id="passwordErrorMessage" class="text-danger">Password is required.</span>
         </div>
       </div>
