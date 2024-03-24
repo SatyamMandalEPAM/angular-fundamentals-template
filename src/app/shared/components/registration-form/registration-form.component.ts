@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class RegistrationFormComponent {
   onSubmit(formValues: any) {
+    console.log(formValues);
 }
   registrationForm!: FormGroup;
 }
