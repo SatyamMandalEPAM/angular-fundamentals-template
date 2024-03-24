@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./registration-form.component.scss'],
 })
 export class RegistrationFormComponent {
+  onSubmit(formValues: any) {
+}
   registrationForm!: FormGroup;
-  // Use the names `name`, `email`, `password` for the form controls.
 }

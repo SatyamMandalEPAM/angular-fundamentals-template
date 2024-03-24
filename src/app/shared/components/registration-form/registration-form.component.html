@@ -1,6 +1,6 @@
 <h2 class="text-align-center">Registration</h2>
 <div class="app-plate">
-  <form #registrationForm="ngForm">
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm.value)">
     <div class="registration-form">
       <div>
         <div class="form__control">
