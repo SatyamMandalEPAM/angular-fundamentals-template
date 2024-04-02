@@ -5,5 +5,6 @@ import { CoursesListComponent } from './features/courses-list/courses-list.compo
 export const routes: Routes = [
     { path: 'login', component: LoginFormComponent},
     { path: 'registration', component: RegistrationFormComponent},
-    { path: 'courses', component: CoursesListComponent}
+    { path: 'courses', component: CoursesListComponent},
+    { path: '**', component:  CoursesListComponent}
 ];
