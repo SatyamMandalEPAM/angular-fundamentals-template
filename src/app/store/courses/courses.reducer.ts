@@ -3,7 +3,7 @@ import { Action, createReducer } from '@ngrx/store';
 // Add your code here
 
 export interface CoursesState {
-    allCourses: Array<string>,
+    allCourses: string,
     course: string,
     isAllCoursesLoading: boolean,
     isSingleCourseLoading: boolean,
@@ -12,7 +12,7 @@ export interface CoursesState {
 }
 
 export const initialState: CoursesState = {
-    allCourses: [],
+    allCourses: '',
     course: '',
     isAllCoursesLoading: false,
     isSingleCourseLoading: false,
