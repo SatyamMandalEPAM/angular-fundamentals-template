@@ -3,20 +3,20 @@ import { Action, createReducer } from '@ngrx/store';
 // Add your code here
 
 export interface CoursesState {
-    allCourses: string,
-    course: string,
+    allCourses: any,
+    course: any,
     isAllCoursesLoading: boolean,
     isSingleCourseLoading: boolean,
     isSearchState: boolean,
-    errorMessage: string
+    errorMessage: any
 }
 
 export const initialState: CoursesState = {
     allCourses: '',
     course: '',
-    isAllCoursesLoading: false,
-    isSingleCourseLoading: false,
-    isSearchState: false,
+    isAllCoursesLoading: true,
+    isSingleCourseLoading: true,
+    isSearchState: true,
     errorMessage: ''
 };
 
